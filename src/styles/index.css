@@ -1,0 +1,23 @@
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(33, 33, 33);
+  width: 450px;
+  height: 150px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 400;
+  margin: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .load-more {
+    width: 200px;
+    height: 100px;
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=index.css.map */
