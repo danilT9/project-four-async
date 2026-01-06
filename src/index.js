@@ -46,7 +46,17 @@ searchInput.addEventListener("input", _.debounce(searchInputDelay, 500));
 
 loadMore.addEventListener("click", e => {
     e.preventDefault();
-    per_page = Number(per_page) + Number(per_page);
+    per_page = Number(per_page) + 12;
     localStorage.setItem("per_page", per_page);
-    getImageFromApi(value, per_page);
+    getImageFromApi(value, per_page).then(() => {
+        setTimeout(() => {
+            const lastImage = gallery.lastElementChild;
+            if (lastImage) {
+                lastImage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "end"
+                })
+            }
+        }, 1000);
+    })
 });
